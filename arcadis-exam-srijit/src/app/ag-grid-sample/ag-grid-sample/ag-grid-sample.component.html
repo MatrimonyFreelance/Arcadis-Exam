@@ -1,0 +1,43 @@
+<div class="agDiv">
+    <button class="btn btn-outline-info" (click)="openGrid()">Open Grid!</button>
+    <br/>
+    <div class="container" *ngIf="isOpenGrid" style="padding-top: 20px;">  
+        <h2 class="header">Example Work Sheet</h2>  
+        <hr>  
+            <div class="row">  
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Serach" 
+                        name="searchText" [(ngModel)]="searchText">
+                        <button class="btn btn-outline-dark" (click)="Search()">Search</button>    
+                      </div>
+                </div>  
+                <div class="col-md-4"></div>  
+                <div class="col-md-4">  
+                    <button class="btn btn-sm btn-success button" (click)="AddWork()">Add Record</button>    
+      
+                    <button class="btn btn-sm btn-primary" (click)="editWork()">Edit Record</button>    
+      
+                    <button class="btn btn-sm btn-danger" (click)="deleteWork()">Delete Record</button>  
+                    <button class="btn btn-sm btn-outline-warning" (click)="exportToExcel()">Export
+                    </button>  
+                </div>  
+            </div>  
+            <br>  
+            <div>
+                <ag-grid-angular 
+                style="width: 100%; height: 200px;" 
+                class="ag-theme-balham" 
+                (gridReady)="onGridReady($event)" 
+                [columnDefs]="columnDefs" 
+                [rowData]="sampleModels" 
+                rowSelection="single" 
+                pagination="true" 
+                paginationPageSize=5  
+                ></ag-grid-angular> 
+            </div> 
+                 
+            </div> 
+            
+            
+</div>

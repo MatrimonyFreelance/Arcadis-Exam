@@ -1,0 +1,64 @@
+<div class="container insertDiv">  
+    <div class="row">  
+        <div class="col-md-8">  
+            <h1>  
+                <span class="badge badge-dark" id="header">Add Items</span>  
+            </h1>  
+            <hr>  
+                <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">  
+                    <div class="row">  
+                        <div class="col-md-4">  
+                            <label for="titleName">Title:</label>  
+                        </div>  
+                        <div class="col-md-6">  
+                            <input type="text" class="form-control" formControlName="title">  
+                                <div *ngIf="submitted && itemForm.controls.title.errors" class="error">  
+                                    <div *ngIf="itemForm.controls.title.errors.required">Title is required</div>  
+                                </div>  
+                            </div>  
+                        </div>  
+                        <div class="row">  
+                            <div class="col-md-4">  
+                                <label for="costName">Cost:</label>  
+                            </div>  
+                            <div class="col-md-6">  
+                                <input type="text" class="form-control" formControlName="cost">  
+                                    <div *ngIf="submitted && itemForm.controls.cost.errors" class="error">  
+                                        <div *ngIf="itemForm.controls.cost.errors.required">Cost is required</div>  
+                                    </div>  
+                                </div>  
+                            </div>  
+                            <div class="row">  
+                                <div class="col-md-4">  
+                                    <label for="quantityName">Quantity:</label>  
+                                </div>  
+                                <div class="col-md-6">  
+                                    <input type="text" class="form-control" formControlName="quantity">  
+                                        <div *ngIf="submitted && itemForm.controls.quantity.errors" class="error">  
+                                            <div *ngIf="itemForm.controls.quantity.errors.required">Quantity is required</div>  
+                                        </div>  
+                                    </div>  
+                                </div>  
+                                <div class="row">  
+                                    <div class="col-md-4">  
+                                        <label for="valName">Currency:</label>  
+                                    </div>  
+                                    <div class="col-md-6">  
+                                        <input type="text" class="form-control" formControlName="costId">  
+                                            <div *ngIf="submitted && itemForm.controls.costId.errors" class="error">  
+                                                <div *ngIf="itemForm.controls.costId.errors.required">Currency is required</div>  
+                                            </div>  
+                                        </div>  
+                                    </div>
+                                            <div class="row">  
+                                                <div class="col-md-4"></div>  
+                                                <div class="col-md-4">  
+                                                    <button type="submit" class="btn btn-primary">Submit</button>     
+  
+                                                    <input type="button" class="btn btn-warning" (click)="Cancel()" value="Cancel">  
+                                                    </div>  
+                                                </div>  
+                                            </form>  
+                                        </div>  
+                                    </div>  
+                                </div>  

@@ -1,0 +1,16 @@
+.mainDiv {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (max-width: 500px) {
+    .mainDiv {
+    display: none;
+    top: 20%;
+    left: 50%;
+      float: none;
+      text-align: left;
+    }
+  }
